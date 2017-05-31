@@ -1,0 +1,21 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: markmcfarlane
+ * Date: 2017-05-30
+ * Time: 8:52 PM
+ */
+
+function pl_profile_menu(){
+  $items = array();
+
+  $items['admin/config/system/'] = array(
+    'title' => t('Pawsitive Love'),
+    'description' => t('Pawsitive Love profile management module'),
+    'type' => MENU_NORMAL_ITEM,
+    'access arguments' => array(0),
+    'weight' => 0,
+  );
+
+  return $items;
+}
