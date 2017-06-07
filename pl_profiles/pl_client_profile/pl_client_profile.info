@@ -1,0 +1,4 @@
+name = Pawsitive Love Client Profile Manager
+description = Manages Client Profile
+package = Pawsitive Love
+core = 7.x

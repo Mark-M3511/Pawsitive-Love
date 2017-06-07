@@ -6,12 +6,12 @@
  * Time: 8:52 PM
  */
 
-function pl_employee_profile_menu(){
+function pl_client_profile_menu(){
   $items = array();
 
-  $items['admin/config/system/pl-profile/pl-employee-profile'] = array(
-    'title' => t('Pawsitive Love Employee Profile'),
-    'description' => t('Pawsitive Love Employee Profile Management'),
+  $items['admin/config/system/pl-profile/pl-client-profile'] = array(
+    'title' => t('Pawsitive Love Client Profile'),
+    'description' => t('Pawsitive Love Client Profile Management'),
     'type' => MENU_NORMAL_ITEM,
     'access arguments' => array(0),
     'weight' => 0,
