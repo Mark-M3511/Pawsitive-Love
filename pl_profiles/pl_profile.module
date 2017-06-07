@@ -9,13 +9,21 @@
 function pl_profile_menu(){
   $items = array();
 
-  $items['admin/config/system/'] = array(
-    'title' => t('Pawsitive Love'),
-    'description' => t('Pawsitive Love profile management module'),
+  $items['admin/config/system/pl-profile'] = array(
+    'title' => t('Pawsitive Love Profile Management'),
+    'description' => t('Pawsitive Love - Profile Management'),
     'type' => MENU_NORMAL_ITEM,
     'access arguments' => array(0),
     'weight' => 0,
   );
 
   return $items;
+}
+
+function pl_profile_enable(){
+  $module_list = array(
+    'pl_client_profile',
+    'pl_employee_profile'
+  );
+  module_enable($module_list, FALSE);
 }

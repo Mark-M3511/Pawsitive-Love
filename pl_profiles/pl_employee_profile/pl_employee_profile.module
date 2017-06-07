@@ -1,0 +1,21 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: markmcfarlane
+ * Date: 2017-05-30
+ * Time: 8:52 PM
+ */
+
+function pl_profile_menu(){
+  $items = array();
+
+  $items['admin/config/system/pl-profile/pl-employee-profile'] = array(
+    'title' => t('Pawsitive Love Employee Profile'),
+    'description' => t('Pawsitive Love Emploee Profile Management'),
+    'type' => MENU_NORMAL_ITEM,
+    'access arguments' => array(0),
+    'weight' => 0,
+  );
+
+  return $items;
+}

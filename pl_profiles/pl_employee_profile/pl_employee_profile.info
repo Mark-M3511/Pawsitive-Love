@@ -1,0 +1,4 @@
+name = Pawsitive Love Employee Profile Manager
+description = Manages Employee Profile
+package = Pawsitive Love
+core = 7.x
