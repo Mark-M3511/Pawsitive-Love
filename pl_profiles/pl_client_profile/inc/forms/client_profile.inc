@@ -48,7 +48,7 @@ function client_profile_profile(){
   $form[$key]['client_profile_photo'] = array(
     '#type' => 'managed_file',
     '#title' => t('Photo of your pet'),
-    '#description' => t('This image will help us identify your loved one. Be sure to keep it updated'),
+    '#description' => t('This image will help us identify your loved one(s). Be sure to keep it updated'),
     '#default_value' => variable_get('image_example_image_fid', ''),
     '#upload_location' => 'public://image_example_images/',
     '#attributes' => array('class' => $main_classes + $custom_classes),
