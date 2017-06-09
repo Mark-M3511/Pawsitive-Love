@@ -17,5 +17,13 @@ function pl_client_profile_menu(){
     'weight' => 0,
   );
 
+  $items['example/client-profile'] = array(
+    'title' => t('Pawsitive Love Client Profile Form'),
+    'description' => t('Client Profile Input Form'),
+    'type' => MENU_NORMAL_ITEM,
+    'access arguments' => array(0),
+    'weight' => 0,
+  );
+
   return $items;
 }

@@ -2,3 +2,6 @@ name = Pawsitive Love Employee Profile Manager
 description = Manages Employee Profile
 package = Pawsitive Love
 core = 7.x
+
+dependencies[] = drupal:system (>= 7.40)
+dependencies[] = pl_profile:pl_profile
