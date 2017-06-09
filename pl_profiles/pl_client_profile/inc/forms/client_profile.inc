@@ -12,9 +12,9 @@ function client_profile_profile(){
     '#collapsible' => FALSE,
   );
 
-  $main_classes = array('client-profile-field');
+  $main_class = array('client-profile-field');
 
-  $custom_classes = array('client-profile-last-name');
+  $custom_class = array('client-profile-last-name');
   $form[$key]['first_name'] = array(
     '#type' => 'textfield',
     '#title' => t('First Name'),
@@ -22,10 +22,10 @@ function client_profile_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_classes + $custom_classes),
+    '#attributes' => array('class' => $main_class + $custom_class),
   );
 
-  $custom_classes = array('client-profile-first-name');
+  $custom_class = array('client-profile-first-name');
   $form[$key]['last_name'] = array(
     '#type' => 'textfield',
     '#title' => t('Last Name'),
@@ -33,26 +33,26 @@ function client_profile_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_classes + $custom_classes),
+    '#attributes' => array('class' => $main_class + $custom_class),
   );
 
-  $custom_classes = array('client-profile-about-yourself');
+  $custom_class = array('client-profile-about-yourself');
   $form[$key]['about_yourself'] = array(
     '#type' => 'textarea',
     '#title' => t('About Yourself'),
     '#default_value' => '',
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_classes + $custom_classes),
+    '#attributes' => array('class' => $main_class + $custom_class),
   );
 
-  $custom_classes = array('client-profile-photo');
+  $custom_class = array('client-profile-photo');
   $form[$key]['client_profile_photo'] = array(
     '#type' => 'managed_file',
     '#title' => t('Photo of your pet'),
     '#description' => t('This image will help us identify your loved one(s). Be sure to keep it updated'),
     '#default_value' => variable_get('image_example_image_fid', ''),
     '#upload_location' => 'public://image_example_images/',
-    '#attributes' => array('class' => $main_classes + $custom_classes),
+    '#attributes' => array('class' => $main_class + $custom_class),
   );
 
   return $form;
