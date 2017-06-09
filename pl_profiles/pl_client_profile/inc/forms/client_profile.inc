@@ -3,14 +3,15 @@
 function client_profile_profile(){
   $form = array();
 
-  $form['client_profile_my_profile'] = array(
+  /** @var  $key -- get the key used for field set */
+
+  $key = 'client_profile_my_profile';
+  $form[$key] = array(
     '#type' => 'fieldset',
     '#title' => t('My Profile'),
     '#collapsible' => FALSE,
   );
 
-  /** @var  $key -- get the key used for field set */
-  $key = key($form);
   $main_classes = array('client-profile-field');
 
   $custom_classes = array('client-profile-last-name');
