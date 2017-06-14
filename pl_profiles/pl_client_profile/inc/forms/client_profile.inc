@@ -209,6 +209,16 @@ function client_profile_profile(){
     '#description' => t(''),
   );
 
+  $key = 'client_profile_residence_details';
+  $custom_class = array('client-profile-cleaning-supplies');
+  $form[$key]['cleaning_supplies'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Location of cleaning supplies'),
+    '#default_value' => '',
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
 //  $custom_class = array('client-profile-about-yourself');
 //  $form[$key]['about_yourself'] = array(
 //    '#type' => 'textarea',
