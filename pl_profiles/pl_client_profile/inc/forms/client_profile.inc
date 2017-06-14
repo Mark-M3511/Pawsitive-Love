@@ -75,6 +75,12 @@ function client_profile_profile(){
   );
 
   $key = 'client_profile_additional_info';
+  $form[$key] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Additional Information'),
+    '#collapsible' => FALSE,
+  );
+
   $custom_class = array('client-profile-street-address');
   $form[$key]['street_address'] = array(
     '#type' => 'textfield',
@@ -205,6 +211,22 @@ function client_profile_profile(){
     '#size' => 40,
     '#maxlength' => 20,
     '#required' => FALSE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $key = 'client_profile_residence_details';
+  $form[$key] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Residence Details'),
+    '#collapsible' => FALSE,
+  );
+
+  $custom_class = array('client-profile-cleaning-supplies');
+  $form[$key]['cleaning_supplies'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Location of cleaning supplies'),
+    '#default_value' => '',
     '#attributes' => array('class' => $main_class + $custom_class),
     '#description' => t(''),
   );
