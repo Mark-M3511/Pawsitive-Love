@@ -231,11 +231,28 @@ function client_profile_profile(){
     '#description' => t(''),
   );
 
-  $key = 'client_profile_residence_details';
-  $custom_class = array('client-profile-cleaning-supplies');
-  $form[$key]['cleaning_supplies'] = array(
+  $custom_class = array('client-profile-electricity-shut-off');
+  $form[$key]['electricity_shut_off'] = array(
     '#type' => 'textarea',
-    '#title' => t('Location of cleaning supplies'),
+    '#title' => t('Electricity Shut Off'),
+    '#default_value' => '',
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-water-shut-off');
+  $form[$key]['water_shut_off'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Electricity Shut Off'),
+    '#default_value' => '',
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-gas-shut-off');
+  $form[$key]['gas_shut_off'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Gas Shut Off'),
     '#default_value' => '',
     '#attributes' => array('class' => $main_class + $custom_class),
     '#description' => t(''),
