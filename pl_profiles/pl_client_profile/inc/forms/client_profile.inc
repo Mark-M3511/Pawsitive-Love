@@ -167,6 +167,85 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
+  $key = 'client_profile_pet_profile_behaviour';
+  $form[$key] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Pet\'s Behavioural Profile'),
+    '#collapsible' => FALSE,
+  );
+
+  $options = array(
+    'anxiety' => t('Anxiety'),
+    'pet aggressive' => t('Aggression around pets'),
+    'food aggressive' => t('Aggression around food'),
+    'garbage muncher' => t('Garbage muncher'),
+    'dislikes handling' => t('Dislikes handling'),
+  );
+
+  $options = drupal_map_assoc();
+  $custom_class = array('client-profile-behaviour-of-pet');
+  $form[$key]['home_entry'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Behavioural Checklist'),
+    '#default_value' => 'Key',
+    '#options' => $options,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-behaviour-aditional-of-pet');
+  $form[$key]['behaviour_info_additional'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Anything else we should be aware of?'),
+    '#default_value' => '',
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $options = array(
+    t('Yes'),
+    t('No'),
+  );
+  $options = drupal_map_assoc($options);
+  $custom_class = array('client-profile-crated-status-of-pet');
+  $form[$key]['crate_status'] = array(
+    '#type' => 'radios',
+    '#title' => t('Do you keep your pet crated?'),
+    '#default_value' => '',
+    '#options' => $options,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-crate-location-of-pet');
+  $form[$key]['crate_location'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Create Location'),
+    '#default_value' => '',
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-litterbox-location-of-pet');
+  $form[$key]['litterbox_location'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Cat Litterbox Location'),
+    '#default_value' => '',
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-small-pet-cage-location-of-pet');
+  $form[$key]['small_pet_cage_location'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Cat Litterbox Location'),
+    '#default_value' => '',
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
   return $form;
 }
 
