@@ -1,9 +1,179 @@
 <?php
 
-function client_profile_profile(){
+
+function client_pet_profile(){
   $form = array();
 
-  /** @var  $key -- get the key used for field set */
+  /** @var string $key */
+  $key = 'client_profile_pet_profile';
+  $form[$key] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Pet Profile'),
+    '#collapsible' => FALSE,
+  );
+
+  $main_class = array('client-profile-field');
+
+  $custom_class = array('client-profile-last-name');
+  $options = array(
+    t('Dog'),
+    t('Cat'),
+    t('Hamster'),
+    t('Chinchilla'),
+    t('Guinea Pig'),
+    t('Rabbit'),
+    t('Mice'),
+    t('Rat'),
+    t('Other'),
+  );
+  $options = drupal_map_assoc($options);
+  $form[$key]['type_of_pet'] = array(
+    '#type' => 'select',
+    '#title' => t('Type of Pet'),
+    '#default_value' => '',
+    '#options' => $options,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-name-of-pet');
+  $form[$key]['name_of_pet'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Name of Pet'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $options = array(
+    t('Male'),
+    t('Female'),
+  );
+  $options = drupal_map_assoc($options);
+  $custom_class = array('client-profile-sex-of-pet');
+  $form[$key]['sex_of_pet'] = array(
+    '#type' => 'radios',
+    '#title' => t('Sex'),
+    '#default_value' => '',
+    '#options' => $options,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-dob-of-pet');
+  $form[$key]['dob_of_pet'] = array(
+    '#type' => 'date',
+    '#title' => t('Date of Birth'),
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-breed-of-pet');
+  $form[$key]['breed_of_pet'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Breed'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+
+  $custom_class = array('client-profile-dominant-color-of-pet');
+  $form[$key]['dominant_color_of_pet'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Dominant Colour'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $options = array(
+    t('Yes'),
+    t('No'),
+  );
+  $options = drupal_map_assoc($options);
+  $custom_class = array('client-profile-sterilization-of-pet');
+  $form[$key]['sterilization_of_pet'] = array(
+    '#type' => 'radios',
+    '#title' => t('Spayed or Neutered'),
+    '#default_value' => '',
+    '#options' => $options,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $options = array(
+    t('Yes'),
+    t('No'),
+  );
+  $options = drupal_map_assoc($options);
+  $custom_class = array('client-profile-chip-status-of-pet');
+  $form[$key]['chip_status_of_pet'] = array(
+    '#type' => 'radios',
+    '#title' => t('Microchipped'),
+    '#default_value' => '',
+    '#options' => $options,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-fav-food-of-pet');
+  $form[$key]['fav_food_of_pet'] = array(
+    '#type' => 'textfield',
+    '#title' => t('What food does your pet?'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-food-location-of-pet');
+  $form[$key]['fav_food_of_pet'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Where is your pet\'s food located?'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('client-profile-food-qty-of-pet');
+  $form[$key]['food_qty_of_pet'] = array(
+    '#type' => 'textfield',
+    '#title' => t('How much food does your pet get at each meal?'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  return $form;
+}
+
+function client_profile(){
+  $form = array();
+
+  /** @var  string $key -- get the key used for field set */
 
   $key = 'client_profile_my_profile';
   $form[$key] = array(
