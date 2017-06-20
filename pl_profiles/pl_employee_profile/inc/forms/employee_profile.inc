@@ -139,4 +139,84 @@ function employee_profile() {
     '#attributes' => array('class' => $main_class + $custom_class),
   );
 
+  return $form;
+
+}
+
+function employee_emergency_contact(){
+
+  $form = array();
+
+  $key = 'employee_profile_emergency_contact';
+  $form[$key] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Employee Profile - Emergency Contact'),
+    '#collapsible' => FALSE,
+  );
+
+  $main_class = array('employee-profile-emergency-contact');
+
+  $custom_class = array('employee-profile-emergency-contact-first-name');
+  $form[$key]['first_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('First Name'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('employee-profile-emergency-contact-last-name');
+  $form[$key]['last_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Last Name'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('employee-profile-emergency-contact-tel');
+  $form[$key]['tel'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Telephone'),
+    '#default_value' => '',
+    '#size' => 40,
+    '#maxlength' => 20,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array('employee-profile-emergency-contact-email');
+  $form[$key]['email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Email'),
+    '#default_value' => '',
+    '#size' => 40,
+    '#maxlength' => 20,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  return $form;
+
+}
+
+function employee_vehicle_information() {
+  $form = array();
+
+  $key = 'employee_profile_vehicle_contact';
+  $form[$key] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Employee Profile - Vehicle Information'),
+    '#collapsible' => FALSE,
+  );
+
+  return $form;
 }
