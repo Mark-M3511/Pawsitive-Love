@@ -255,15 +255,16 @@ function client_profile(){
   /** @var  string $key -- get the key used for field set */
 
   $key = 'client_profile_my_profile';
+  $class_prefix = 'client-profile-';
   $form[$key] = array(
     '#type' => 'fieldset',
     '#title' => t('My Profile'),
     '#collapsible' => FALSE,
   );
 
-  $main_class = array('client-profile-field');
+  $main_class = array($class_prefix. 'field');
 
-  $custom_class = array('client-profile-last-name');
+  $custom_class = array($class_prefix. 'last-name');
   $form[$key]['first_name'] = array(
     '#type' => 'textfield',
     '#title' => t('First Name'),
@@ -275,7 +276,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-first-name');
+  $custom_class = array($class_prefix. 'first-name');
   $form[$key]['last_name'] = array(
     '#type' => 'textfield',
     '#title' => t('Last Name'),
@@ -287,7 +288,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-tel');
+  $custom_class = array($class_prefix. '-tel');
   $form[$key]['tel'] = array(
     '#type' => 'textfield',
     '#title' => t('Telephone'),
@@ -299,7 +300,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-email');
+  $custom_class = array($class_prefix. '-email');
   $form[$key]['email'] = array(
     '#type' => 'textfield',
     '#title' => t('Email'),
@@ -312,7 +313,7 @@ function client_profile(){
   );
 
   $options = drupal_map_assoc(array(t('Email'), t('SMS'),));
-  $custom_class = array('client-profile-communication-options');
+  $custom_class = array($class_prefix. 'communication-options');
   $form[$key]['comm_options'] = array(
     '#type' => 'radios',
     '#title' => t('Communication Options'),
@@ -330,7 +331,7 @@ function client_profile(){
     '#collapsible' => FALSE,
   );
 
-  $custom_class = array('client-profile-street-address');
+  $custom_class = array($class_prefix. 'street-address');
   $form[$key]['street_address'] = array(
     '#type' => 'textfield',
     '#title' => t('Street Address'),
@@ -342,7 +343,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-street-address');
+  $custom_class = array($class_prefix. 'street-address');
   $form[$key]['street_unit'] = array(
     '#type' => 'textfield',
     '#title' => t('Unit/Suite/Apt #'),
@@ -354,7 +355,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-city');
+  $custom_class = array($class_prefix. 'city');
   $form[$key]['city'] = array(
     '#type' => 'textfield',
     '#title' => t('City'),
@@ -366,7 +367,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-prov_state');
+  $custom_class = array($class_prefix. 'prov_state');
   $options = array(
     'AB' => 'Alberta',
     'BC' => 'British Columbia',
@@ -392,7 +393,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-postal-zip');
+  $custom_class = array($class_prefix. 'postal-zip');
   $form[$key]['postal_zip'] = array(
     '#type' => 'textfield',
     '#title' => t('Postal/Zip'),
@@ -405,7 +406,7 @@ function client_profile(){
   );
 
   $options = drupal_map_assoc(array(t('Key'), t('Code'),));
-  $custom_class = array('client-profile-home-entry');
+  $custom_class = array($class_prefix. 'home-entry');
   $form[$key]['home_entry'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Home Entry'),
@@ -416,7 +417,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-access-code');
+  $custom_class = array($class_prefix. 'access-code');
   $form[$key]['postal_zip'] = array(
     '#type' => 'textfield',
     '#title' => t('Access Code'),
@@ -429,7 +430,7 @@ function client_profile(){
   );
 
   $options = drupal_map_assoc(array(t('Yes'), t('No'),));
-  $custom_class = array('client-profile-home-alarm');
+  $custom_class = array($class_prefix. 'home-alarm');
   $form[$key]['home_alarm'] = array(
     '#type' => 'radios',
     '#title' => t('Home Alarm'),
@@ -440,7 +441,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-security-panel');
+  $custom_class = array($class_prefix. 'security-panel');
   $form[$key]['security_panel_location'] = array(
     '#type' => 'textfield',
     '#title' => t('Security Panel Location'),
@@ -452,7 +453,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-pass-code');
+  $custom_class = array($class_prefix. 'pass-code');
   $form[$key]['pass_code'] = array(
     '#type' => 'textfield',
     '#title' => t('Pass Code'),
@@ -471,7 +472,7 @@ function client_profile(){
     '#collapsible' => FALSE,
   );
 
-  $custom_class = array('client-profile-cleaning-supplies');
+  $custom_class = array($class_prefix. 'cleaning-supplies');
   $form[$key]['cleaning_supplies'] = array(
     '#type' => 'textarea',
     '#title' => t('Location of cleaning supplies'),
@@ -480,7 +481,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-electricity-shut-off');
+  $custom_class = array($class_prefix. 'electricity-shut-off');
   $form[$key]['electricity_shut_off'] = array(
     '#type' => 'textarea',
     '#title' => t('Electricity Shut Off'),
@@ -489,7 +490,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-water-shut-off');
+  $custom_class = array($class_prefix. 'water-shut-off');
   $form[$key]['water_shut_off'] = array(
     '#type' => 'textarea',
     '#title' => t('Electricity Shut Off'),
@@ -498,7 +499,7 @@ function client_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-gas-shut-off');
+  $custom_class = array($class_prefix. 'gas-shut-off');
   $form[$key]['gas_shut_off'] = array(
     '#type' => 'textarea',
     '#title' => t('Gas Shut Off'),
@@ -506,28 +507,6 @@ function client_profile(){
     '#attributes' => array('class' => $main_class + $custom_class),
     '#description' => t(''),
   );
-
-//  $custom_class = array('client-profile-about-yourself');
-//  $form[$key]['about_yourself'] = array(
-//    '#type' => 'textarea',
-//    '#title' => t('About Yourself'),
-//    '#default_value' => '',
-//    '#required' => TRUE,
-//    '#attributes' => array('class' => $main_class + $custom_class),
-//  );
-
-//  $custom_class = array('client-profile-photo');
-//  $form[$key]['client_profile_photo'] = array(
-//    '#type' => 'managed_file',
-//    '#title' => t('Photo of your pet'),
-//    '#description' => t('This image will help us identify your loved one(s). Be sure to keep it updated'),
-//    '#default_value' => variable_get('image_example_image_fid', ''),
-//    '#upload_location' => 'public://image_example_images/',
-//    '#attributes' => array('class' => $main_class + $custom_class),
-//  );
-
-  $custom_class = array('client-profile-photo');
-
 
   return $form;
 }

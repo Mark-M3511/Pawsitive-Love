@@ -11,9 +11,10 @@ function employee_profile() {
     '#collapsible' => FALSE,
   );
 
-  $main_class = array('employee-profile-field');
+  $class_prefix = 'employee-profile-';
+  $main_class = array($class_prefix. 'field');
 
-  $custom_class = array('employee-profile-first-name');
+  $custom_class = array($class_prefix. 'first-name');
   $form[$key]['first_name'] = array(
     '#type' => 'textfield',
     '#title' => t('First Name'),
@@ -25,7 +26,7 @@ function employee_profile() {
     '#description' => t(''),
   );
 
-  $custom_class = array('employee-profile-last-name');
+  $custom_class = array($class_prefix. 'last-name');
   $form[$key]['last_name'] = array(
     '#type' => 'textfield',
     '#title' => t('Last Name'),
@@ -44,7 +45,7 @@ function employee_profile() {
     '#collapsible' => FALSE,
   );
 
-  $custom_class = array('employee-profile-street-address');
+  $custom_class = array($class_prefix. 'street-address');
   $form[$key]['street_address'] = array(
     '#type' => 'textfield',
     '#title' => t('Street Address'),
@@ -56,7 +57,7 @@ function employee_profile() {
     '#description' => t(''),
   );
 
-  $custom_class = array('employee-profile-street-address');
+  $custom_class = array($class_prefix. 'street-address');
   $form[$key]['street_unit'] = array(
     '#type' => 'textfield',
     '#title' => t('Unit/Suite/Apt #'),
@@ -68,7 +69,7 @@ function employee_profile() {
     '#description' => t(''),
   );
 
-  $custom_class = array('employee-profile-city');
+  $custom_class = array($class_prefix. 'city');
   $form[$key]['city'] = array(
     '#type' => 'textfield',
     '#title' => t('City'),
@@ -81,7 +82,7 @@ function employee_profile() {
   );
 
   /** Place province array in it's own file */
-  $custom_class = array('employee-profile-prov_state');
+  $custom_class = array($class_prefix. 'prov_state');
   $options = array(
     'AB' => 'Alberta',
     'BC' => 'British Columbia',
@@ -107,7 +108,7 @@ function employee_profile() {
     '#description' => t(''),
   );
 
-  $custom_class = array('employee-profile-postal-zip');
+  $custom_class = array($class_prefix. 'postal-zip');
   $form[$key]['postal_zip'] = array(
     '#type' => 'textfield',
     '#title' => t('Postal/Zip'),
@@ -120,7 +121,7 @@ function employee_profile() {
   );
 
 
-  $custom_class = array('employee-profile-about=yourself');
+  $custom_class = array($class_prefix. 'about=yourself');
   $form[$key]['about_yourself'] = array(
     '#type' => 'textarea',
     '#title' => t('About Yourself'),
@@ -129,7 +130,7 @@ function employee_profile() {
     '#description' => t(''),
   );
 
-  $custom_class = array('employee-profile-photo');
+  $custom_class = array($class_prefix. 'photo');
   $form[$key]['employee_profile_photo'] = array(
     '#type' => 'managed_file',
     '#title' => t('Photo of your pet'),
@@ -154,9 +155,10 @@ function employee_emergency_contact(){
     '#collapsible' => FALSE,
   );
 
-  $main_class = array('employee-profile-emergency-contact');
+  $class_prefix = 'employee-profile-';
+  $main_class = array($class_prefix. 'emergency-contact');
 
-  $custom_class = array('employee-profile-emergency-contact-first-name');
+  $custom_class = array($class_prefix. 'emergency-contact-first-name');
   $form[$key]['first_name'] = array(
     '#type' => 'textfield',
     '#title' => t('First Name'),
@@ -168,7 +170,7 @@ function employee_emergency_contact(){
     '#description' => t(''),
   );
 
-  $custom_class = array('employee-profile-emergency-contact-last-name');
+  $custom_class = array($class_prefix. 'emergency-contact-last-name');
   $form[$key]['last_name'] = array(
     '#type' => 'textfield',
     '#title' => t('Last Name'),
@@ -180,7 +182,7 @@ function employee_emergency_contact(){
     '#description' => t(''),
   );
 
-  $custom_class = array('employee-profile-emergency-contact-tel');
+  $custom_class = array($class_prefix. 'emergency-contact-tel');
   $form[$key]['tel'] = array(
     '#type' => 'textfield',
     '#title' => t('Telephone'),
@@ -192,7 +194,7 @@ function employee_emergency_contact(){
     '#description' => t(''),
   );
 
-  $custom_class = array('employee-profile-emergency-contact-email');
+  $custom_class = array($class_prefix. 'emergency-contact-email');
   $form[$key]['email'] = array(
     '#type' => 'textfield',
     '#title' => t('Email'),
@@ -212,6 +214,8 @@ function employee_vehicle_information() {
   $form = array();
 
   $key = 'employee_profile_vehicle_contact';
+
+  $class_prefix = 'employee-profile-';
   $form[$key] = array(
     '#type' => 'fieldset',
     '#title' => t('Employee Profile - Vehicle Information'),
