@@ -57,17 +57,17 @@ function employee_profile() {
     '#description' => t(''),
   );
 
-  $custom_class = array($class_prefix. 'street-address');
-  $form[$key]['street_unit'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Unit/Suite/Apt #'),
-    '#default_value' => '',
-    '#size' => 40,
-    '#maxlength' => 20,
-    '#required' => FALSE,
-    '#attributes' => array('class' => $main_class + $custom_class),
-    '#description' => t(''),
-  );
+//  $custom_class = array($class_prefix. 'street-address');
+//  $form[$key]['street_unit'] = array(
+//    '#type' => 'textfield',
+//    '#title' => t('Unit/Suite/Apt #'),
+//    '#default_value' => '',
+//    '#size' => 40,
+//    '#maxlength' => 20,
+//    '#required' => FALSE,
+//    '#attributes' => array('class' => $main_class + $custom_class),
+//    '#description' => t(''),
+//  );
 
   $custom_class = array($class_prefix. 'city');
   $form[$key]['city'] = array(
@@ -288,6 +288,15 @@ function employee_vehicle_information() {
     '#title' => t('Valid Driver\'s Licence'),
     '#default_value' => '',
     '#options' => $options,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array($class_prefix. 'dl-expiry-date');
+  $form[$key]['dl_expiry_date'] = array(
+    '#type' => 'date',
+    '#title' => t('Driver\'s Licence Expiry Date'),
     '#required' => TRUE,
     '#attributes' => array('class' => $main_class + $custom_class),
     '#description' => t(''),

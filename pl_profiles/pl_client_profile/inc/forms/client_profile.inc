@@ -182,13 +182,12 @@ function client_pet_profile(){
     'garbage muncher' => t('Garbage muncher'),
     'dislikes handling' => t('Dislikes handling'),
   );
-
-  $options = drupal_map_assoc();
+  $options = drupal_map_assoc($options);
   $custom_class = array($class_prefix. 'behaviour-of-pet');
   $form[$key]['home_entry'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Behavioural Checklist'),
-    '#default_value' => 'Key',
+    '#default_value' => '',
     '#options' => $options,
     '#required' => TRUE,
     '#attributes' => array('class' => $main_class + $custom_class),
