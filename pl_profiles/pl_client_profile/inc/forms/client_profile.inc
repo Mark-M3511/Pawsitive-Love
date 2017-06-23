@@ -12,9 +12,10 @@ function client_pet_profile(){
     '#collapsible' => FALSE,
   );
 
-  $main_class = array('client-profile-field');
+  $class_prefix = 'client-profile-';
+  $main_class = array($class_prefix. 'field');
 
-  $custom_class = array('client-profile-last-name');
+  $custom_class = array($class_prefix. 'last-name');
   $options = array(
     t('Dog'),
     t('Cat'),
@@ -37,7 +38,7 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-name-of-pet');
+  $custom_class = array($class_prefix. 'name-of-pet');
   $form[$key]['name_of_pet'] = array(
     '#type' => 'textfield',
     '#title' => t('Name of Pet'),
@@ -54,7 +55,7 @@ function client_pet_profile(){
     t('Female'),
   );
   $options = drupal_map_assoc($options);
-  $custom_class = array('client-profile-sex-of-pet');
+  $custom_class = array($class_prefix. 'sex-of-pet');
   $form[$key]['sex_of_pet'] = array(
     '#type' => 'radios',
     '#title' => t('Sex'),
@@ -65,7 +66,7 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-dob-of-pet');
+  $custom_class = array($class_prefix. 'dob-of-pet');
   $form[$key]['dob_of_pet'] = array(
     '#type' => 'date',
     '#title' => t('Date of Birth'),
@@ -74,7 +75,7 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-breed-of-pet');
+  $custom_class = array($class_prefix. 'breed-of-pet');
   $form[$key]['breed_of_pet'] = array(
     '#type' => 'textfield',
     '#title' => t('Breed'),
@@ -87,7 +88,7 @@ function client_pet_profile(){
   );
 
 
-  $custom_class = array('client-profile-dominant-color-of-pet');
+  $custom_class = array($class_prefix. 'dominant-color-of-pet');
   $form[$key]['dominant_color_of_pet'] = array(
     '#type' => 'textfield',
     '#title' => t('Dominant Colour'),
@@ -104,7 +105,7 @@ function client_pet_profile(){
     t('No'),
   );
   $options = drupal_map_assoc($options);
-  $custom_class = array('client-profile-sterilization-of-pet');
+  $custom_class = array($class_prefix. 'sterilization-of-pet');
   $form[$key]['sterilization_of_pet'] = array(
     '#type' => 'radios',
     '#title' => t('Spayed or Neutered'),
@@ -120,7 +121,7 @@ function client_pet_profile(){
     t('No'),
   );
   $options = drupal_map_assoc($options);
-  $custom_class = array('client-profile-chip-status-of-pet');
+  $custom_class = array($class_prefix. 'chip-status-of-pet');
   $form[$key]['chip_status_of_pet'] = array(
     '#type' => 'radios',
     '#title' => t('Microchipped'),
@@ -131,7 +132,7 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-fav-food-of-pet');
+  $custom_class = array($class_prefix. 'fav-food-of-pet');
   $form[$key]['fav_food_of_pet'] = array(
     '#type' => 'textfield',
     '#title' => t('What food does your pet?'),
@@ -143,7 +144,7 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-food-location-of-pet');
+  $custom_class = array($class_prefix. 'food-location-of-pet');
   $form[$key]['fav_food_of_pet'] = array(
     '#type' => 'textfield',
     '#title' => t('Where is your pet\'s food located?'),
@@ -155,7 +156,7 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-food-qty-of-pet');
+  $custom_class = array($class_prefix. 'food-qty-of-pet');
   $form[$key]['food_qty_of_pet'] = array(
     '#type' => 'textfield',
     '#title' => t('How much food does your pet get at each meal?'),
@@ -183,7 +184,7 @@ function client_pet_profile(){
   );
 
   $options = drupal_map_assoc();
-  $custom_class = array('client-profile-behaviour-of-pet');
+  $custom_class = array($class_prefix. 'behaviour-of-pet');
   $form[$key]['home_entry'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Behavioural Checklist'),
@@ -194,7 +195,7 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-behaviour-aditional-of-pet');
+  $custom_class = array($class_prefix. 'behaviour-aditional-of-pet');
   $form[$key]['behaviour_info_additional'] = array(
     '#type' => 'textarea',
     '#title' => t('Anything else we should be aware of?'),
@@ -208,7 +209,7 @@ function client_pet_profile(){
     t('No'),
   );
   $options = drupal_map_assoc($options);
-  $custom_class = array('client-profile-crated-status-of-pet');
+  $custom_class = array($class_prefix. 'crated-status-of-pet');
   $form[$key]['crate_status'] = array(
     '#type' => 'radios',
     '#title' => t('Do you keep your pet crated?'),
@@ -219,7 +220,7 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-crate-location-of-pet');
+  $custom_class = array($class_prefix. 'crate-location-of-pet');
   $form[$key]['crate_location'] = array(
     '#type' => 'textarea',
     '#title' => t('Create Location'),
@@ -228,7 +229,7 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-litterbox-location-of-pet');
+  $custom_class = array($class_prefix. 'litterbox-location-of-pet');
   $form[$key]['litterbox_location'] = array(
     '#type' => 'textarea',
     '#title' => t('Cat Litterbox Location'),
@@ -237,7 +238,7 @@ function client_pet_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array('client-profile-small-pet-cage-location-of-pet');
+  $custom_class = array($class_prefix. 'small-pet-cage-location-of-pet');
   $form[$key]['small_pet_cage_location'] = array(
     '#type' => 'textarea',
     '#title' => t('Cat Litterbox Location'),
