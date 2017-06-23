@@ -155,10 +155,10 @@ function employee_emergency_contact(){
     '#collapsible' => FALSE,
   );
 
-  $class_prefix = 'employee-profile-';
+  $class_prefix = 'employee-profile-emergency-contact-';
   $main_class = array($class_prefix. 'emergency-contact');
 
-  $custom_class = array($class_prefix. 'emergency-contact-first-name');
+  $custom_class = array($class_prefix. 'first-name');
   $form[$key]['first_name'] = array(
     '#type' => 'textfield',
     '#title' => t('First Name'),
@@ -170,7 +170,7 @@ function employee_emergency_contact(){
     '#description' => t(''),
   );
 
-  $custom_class = array($class_prefix. 'emergency-contact-last-name');
+  $custom_class = array($class_prefix. 'last-name');
   $form[$key]['last_name'] = array(
     '#type' => 'textfield',
     '#title' => t('Last Name'),
@@ -182,7 +182,7 @@ function employee_emergency_contact(){
     '#description' => t(''),
   );
 
-  $custom_class = array($class_prefix. 'emergency-contact-tel');
+  $custom_class = array($class_prefix. 'tel');
   $form[$key]['tel'] = array(
     '#type' => 'textfield',
     '#title' => t('Telephone'),
@@ -194,7 +194,7 @@ function employee_emergency_contact(){
     '#description' => t(''),
   );
 
-  $custom_class = array($class_prefix. 'emergency-contact-email');
+  $custom_class = array($class_prefix. 'email');
   $form[$key]['email'] = array(
     '#type' => 'textfield',
     '#title' => t('Email'),
@@ -213,13 +213,84 @@ function employee_emergency_contact(){
 function employee_vehicle_information() {
   $form = array();
 
-  $key = 'employee_profile_vehicle_contact';
+  $key = 'employee_profile_vehicle';
 
   $class_prefix = 'employee-profile-';
+  $main_class = array($class_prefix. 'vehicle');
+
   $form[$key] = array(
     '#type' => 'fieldset',
     '#title' => t('Employee Profile - Vehicle Information'),
     '#collapsible' => FALSE,
+  );
+
+  $custom_class = array($class_prefix. 'year');
+  $options = array();
+  $year = (int)date('Y');
+  $year += 1;
+  for ($ctr = ($year - 10); $ctr <= $year;$ctr++){
+    $options = array($year => $year);
+  }
+  $form[$key]['vehicle_year'] = array(
+    '#type' => 'select',
+    '#title' => t('Year'),
+    '#default_value' => $year,
+    '#options' => $options,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array($class_prefix. 'vehicle-make');
+  $form[$key]['vehicle_make'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Make'),
+    '#default_value' => '',
+    '#size' => 40,
+    '#maxlength' => 20,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array($class_prefix. 'vehicle-model');
+  $form[$key]['vehicle_model'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Model'),
+    '#default_value' => '',
+    '#size' => 40,
+    '#maxlength' => 20,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array($class_prefix. 'licence-plate');
+  $form[$key]['vehicle_licence_plate'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Licence Plate'),
+    '#default_value' => '',
+    '#size' => 40,
+    '#maxlength' => 20,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $options = array(
+    t('Yes'),
+    t('No'),
+  );
+  $options = drupal_map_assoc($options);
+  $custom_class = array('valid-driver-licence');
+  $form[$key]['valid_drivers_licence'] = array(
+    '#type' => 'radios',
+    '#title' => t('Valid Driver\'s Licence'),
+    '#default_value' => '',
+    '#options' => $options,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
   );
 
   return $form;
