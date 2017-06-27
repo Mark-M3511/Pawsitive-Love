@@ -368,21 +368,22 @@ function client_profile(){
   );
 
   $custom_class = array($class_prefix. 'prov_state');
-  $options = array(
-    'AB' => 'Alberta',
-    'BC' => 'British Columbia',
-    'MB' => 'Manitoba',
-    'NB' => 'New Brunswick',
-    'NL' => 'Newfoundland and Labador',
-    'NT' => 'Northwest Territories',
-    'NS' => 'Nova Scotia',
-    'NU' => 'Nunavut',
-    'ON' => 'Ontario',
-    'PE' => 'Prince Edward Island',
-    'QC' => 'Quebec',
-    'SK' => 'Saskatchewan',
-    'YT' => 'Yukon',
-    );
+//  $options = array(
+//    'AB' => 'Alberta',
+//    'BC' => 'British Columbia',
+//    'MB' => 'Manitoba',
+//    'NB' => 'New Brunswick',
+//    'NL' => 'Newfoundland and Labador',
+//    'NT' => 'Northwest Territories',
+//    'NS' => 'Nova Scotia',
+//    'NU' => 'Nunavut',
+//    'ON' => 'Ontario',
+//    'PE' => 'Prince Edward Island',
+//    'QC' => 'Quebec',
+//    'SK' => 'Saskatchewan',
+//    'YT' => 'Yukon',
+//    );
+  $options = pl_provinces();
   $form[$key]['prov_state'] = array(
     '#type' => 'select',
     '#title' => t('Province'),
