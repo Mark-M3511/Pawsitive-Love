@@ -5,3 +5,5 @@ core = 7.x
 
 dependencies[] = drupal:system (>= 7.40)
 dependencies[] = entity:entity
+
+files[] = 'inc/pl_provinces.inc';
