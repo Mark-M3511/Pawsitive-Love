@@ -3,6 +3,8 @@ description = Manages Client and Employee Profile modules
 package = Pawsitive Love
 core = 7.x
 
+configure = admin/config/people/pl-profile
+
 dependencies[] = drupal:system (>= 7.40)
 dependencies[] = entity:entity
 

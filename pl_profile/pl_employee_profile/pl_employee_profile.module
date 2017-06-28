@@ -9,7 +9,7 @@
 function pl_employee_profile_menu(){
   $items = array();
 
-  $items['admin/config/system/pl-profile/pl-employee-profile'] = array(
+  $items['admin/config/people/pl-profile/pl-employee-profile'] = array(
     'title' => t('Pawsitive Love Employee Profile'),
     'description' => t('Pawsitive Love Employee Profile Management'),
     'type' => MENU_NORMAL_ITEM,
