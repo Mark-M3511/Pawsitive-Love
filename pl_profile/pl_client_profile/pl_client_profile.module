@@ -9,7 +9,7 @@
 function pl_client_profile_menu(){
   $items = array();
 
-  $items['admin/config/system/pl-profile/pl-client-profile'] = array(
+  $items['admin/config/people/pl-profile/pl-client-profile'] = array(
     'title' => t('Pawsitive Love Client Profile'),
     'description' => t('Pawsitive Love Client Profile Management'),
     'type' => MENU_NORMAL_ITEM,
@@ -17,13 +17,38 @@ function pl_client_profile_menu(){
     'weight' => 0,
   );
 
-  $items['example/client-profile'] = array(
+  $items['admin/config/people/pl-profile/pl-client-profile/client/admin'] = array(
     'title' => t('Pawsitive Love Client Profile Form'),
     'description' => t('Client Profile Input Form'),
-    'type' => MENU_NORMAL_ITEM,
+    'type' => MENU_DEFAULT_LOCAL_TASK,
     'access arguments' => array(0),
     'weight' => 0,
   );
+
+  $items['admin/config/people/pl-profile/pl-client-profile/client/admin/client-edit'] = array(
+    'title' => t('Pawsitive Love Client Profile Form'),
+    'description' => t('Client Profile Input Form'),
+    'type' => MENU_LOCAL_ACTION,
+    'access arguments' => array(0),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('client_pet_profile',),
+    'file' => 'client_profile.inc',
+    'file path' => drupal_get_path('module', 'pl_client_profile'). '/inc/forms',
+    'weight' => 1,
+    'weight' => 0,
+  );
+
+//  $items['admin/config/people/pl-profile/pl-client-profile/client/edit'] = array(
+//    'title' => t('Pawsitive Love Client Profile Form'),
+//    'description' => t('Client Profile Input Form'),
+//    'type' => MENU_LOCAL_TASK,
+//    'access arguments' => array(0),
+//    'page callback' => 'drupal_get_form',
+//    'page arguments' => array('client_pet_profile',),
+//    'file' => 'client_profile.inc',
+//    'file path' => drupal_get_path('module', 'pl_client_profile'). '/inc/forms',
+//    'weight' => 1,
+//  );
 
   return $items;
 }

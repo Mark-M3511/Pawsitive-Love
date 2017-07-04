@@ -17,5 +17,26 @@ function pl_employee_profile_menu(){
     'weight' => 0,
   );
 
+  $items['admin/config/people/pl-profile/pl-employee-profile/employee/admin'] = array(
+    'title' => t('Pawsitive Love Rmployee Profile Form'),
+    'description' => t('Employee Profile Input Form'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'access arguments' => array(0),
+    'weight' => 0,
+  );
+
+  $items['admin/config/people/pl-profile/pl-employee-profile/employee/admin/employee-edit'] = array(
+    'title' => t('Pawsitive Love Employee Profile Form'),
+    'description' => t('Employee Profile Input Form'),
+    'type' => MENU_LOCAL_ACTION,
+    'access arguments' => array(0),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('employee_pet_profile',),
+    'file' => 'employee_profile.inc',
+    'file path' => drupal_get_path('module', 'pl_employee_profile'). '/inc/forms',
+    'weight' => 1,
+    'weight' => 0,
+  );
+
   return $items;
 }
