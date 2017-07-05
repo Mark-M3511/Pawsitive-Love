@@ -31,7 +31,7 @@ function pl_employee_profile_menu(){
     'type' => MENU_LOCAL_ACTION,
     'access arguments' => array(0),
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('employee_pet_profile',),
+    'page arguments' => array('employee_profile',),
     'file' => 'employee_profile.inc',
     'file path' => drupal_get_path('module', 'pl_employee_profile'). '/inc/forms',
     'weight' => 1,
