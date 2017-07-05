@@ -1,6 +1,5 @@
 <?php
 
-
 function client_pet_profile(){
   $form = array();
 

@@ -7,5 +7,3 @@ configure = admin/config/people/pl-profile
 
 dependencies[] = drupal:system (>= 7.40)
 dependencies[] = entity:entity
-
-;files[] = 'inc/pl_provinces.inc';

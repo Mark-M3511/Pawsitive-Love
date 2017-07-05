@@ -1,5 +1,7 @@
 <?php
 
+require_once drupal_get_path('module', 'pl_profile'). '/inc/pl_provinces.inc';
+
 function client_profile_pet_profile(){
   $form = array();
 
