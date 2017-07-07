@@ -1,5 +1,14 @@
 <?php
 
+require_once drupal_get_path('module', 'pl_profile'). '/inc/pl_provinces.inc';
+
+function client_profile(){
+  return array_merge(
+    client_pet_profile(),
+    client_basic_profile()
+  );
+}
+
 function client_pet_profile(){
   $form = array();
 
@@ -248,7 +257,7 @@ function client_pet_profile(){
   return $form;
 }
 
-function client_profile(){
+function client_basic_profile(){
   $form = array();
 
   /** @var  string $key -- get the key used for field set */

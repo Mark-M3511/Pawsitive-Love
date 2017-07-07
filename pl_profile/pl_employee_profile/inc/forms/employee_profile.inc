@@ -3,15 +3,13 @@
 require_once drupal_get_path('module', 'pl_profile'). '/inc/pl_provinces.inc';
 
 function employee_profile(){
-  $forms = array();
 
-  $forms = array_merge(
+  return array_merge(
     employee_basic_profile(),
     employee_emergency_contact(),
     employee_vehicle_information()
   );
 
-  return $forms;
 }
 
 function employee_basic_profile() {
