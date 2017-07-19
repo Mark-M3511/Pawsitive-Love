@@ -7,7 +7,7 @@
  */
 
 function pl_client_profile_schema(){
-  $schema['client_profile'] = array(
+  $schema['pl_client_profile'] = array(
     'description' => 'Client Profile table holds identifying informaiton about human and pet clients',
     'fields' => array(
        'cpid' => array(
