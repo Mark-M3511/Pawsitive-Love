@@ -11,12 +11,32 @@ function pl_client_profile_schema(){
     'description' => 'Client Profile table holds identifying informaiton about human and pet clients',
     'fields' => array(
        'cpid' => array(
-          'description' => 'Primary id for Client Profile',
-          'type' => 'serial',
-          'unsigned' => TRUE,
-          'not null' => TRUE,
+         'description' => 'Primary id for Client Profile',
+         'type' => 'serial',
+         'unsigned' => TRUE,
+         'not null' => TRUE,
        ),
-
+       'last_name' => array(
+         'description' => 'Last name of cliet',
+         'type' => 'varchar',
+         'length' => 100,
+         'not null' => TRUE,
+         'default' => '',
+       ),
+      'first_name' => array(
+        'description' => 'First name of cliet',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'tel_mobile'=> array(
+        'description' => 'Client\'s mobile number',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+      ),
      ),
     'primary key' => array('cpid'),
   );
