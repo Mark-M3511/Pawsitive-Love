@@ -50,7 +50,7 @@ function employee_basic_profile() {
     '#description' => t(''),
   );
 
-  $custom_class = array($class_prefix. 'last-name');
+  $custom_class = array($class_prefix. 'about-yourself');
   $form[$key]['about_yourself'] = array(
     '#type' => 'textarea',
     '#title' => t('About Yourself'),
