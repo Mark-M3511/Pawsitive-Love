@@ -179,7 +179,7 @@ function client_pet_profile(){
   $key = 'client_profile_pet_profile_behaviour';
   $form[$key] = array(
     '#type' => 'fieldset',
-    '#title' => t('Pet\'s Behavioural Profile'),
+    '#title' => t('Pet\'s Behavioral Profile'),
     '#collapsible' => FALSE,
   );
 
@@ -194,7 +194,7 @@ function client_pet_profile(){
   $custom_class = array($class_prefix. 'behaviour-of-pet');
   $form[$key]['home_entry'] = array(
     '#type' => 'checkboxes',
-    '#title' => t('Behavioural Checklist'),
+    '#title' => t('Behavioral Checklist'),
     '#default_value' => '',
     '#options' => $options,
     '#required' => TRUE,
