@@ -192,8 +192,8 @@ function pl_client_human_profile_schema(){
     ),
     'primary key' => array('cpid'),
     'indexes' => array(
-      'lastname' => array('lastname'),
-      'firstname' => array('firstname'),
+      'last_name' => array('last_name'),
+      'first_name' => array('first_name'),
       'tel_mobile' => array('tel_mobile'),
       'email' => array('email'),
     ),
