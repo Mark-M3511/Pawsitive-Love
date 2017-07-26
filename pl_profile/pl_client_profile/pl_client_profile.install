@@ -108,6 +108,11 @@ function pl_client_pet_profile_schema(){
       ),
     ),
     'primary key' => array('cpid'),
+    'indexes' => array(
+      'name_of_pet' => array('name_of_pet'),
+      'type_of_pet' => array('type_of_pet'),
+      'pet_breed' => array('pet_breed'),
+    ),
   );
 
   return $schema;
