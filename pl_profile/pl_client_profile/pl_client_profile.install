@@ -23,9 +23,15 @@ function pl_client_pet_profile_schema(){
   $schema['pl_client_pet_profile'] = array(
     'description' => 'Client Pet Profile table holds identifying informaiton about human pet clients',
     'fields' => array(
-      'cpid' => array(
+      'cppid' => array(
         'description' => 'Primary id for Client Profile',
         'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'cphid' => array(
+        'description' => 'Foreign key id for Client Profile',
+        'type' => 'int',
         'unsigned' => TRUE,
         'not null' => TRUE,
       ),
@@ -107,7 +113,7 @@ function pl_client_pet_profile_schema(){
         'default' => '',
       ),
     ),
-    'primary key' => array('cpid'),
+    'primary key' => array('cppid'),
     'indexes' => array(
       'name_of_pet' => array('name_of_pet'),
       'type_of_pet' => array('type_of_pet'),
@@ -124,8 +130,8 @@ function pl_client_human_profile_schema(){
   $schema['pl_client_human_profile'] = array(
     'description' => 'Client Human Profile table holds identifying informaiton about human clients',
     'fields' => array(
-      'cpid' => array(
-        'description' => 'Primary id for Client Profile',
+      'cphid' => array(
+        'description' => 'Primary id for Client Pet Profile',
         'type' => 'serial',
         'unsigned' => TRUE,
         'not null' => TRUE,
@@ -190,8 +196,9 @@ function pl_client_human_profile_schema(){
         'default' => '',
       ),
     ),
-    'primary key' => array('cpid'),
+    'primary key' => array('cppid'),
     'indexes' => array(
+      'cphid' => array('cphid'),
       'last_name' => array('last_name'),
       'first_name' => array('first_name'),
       'tel_mobile' => array('tel_mobile'),
