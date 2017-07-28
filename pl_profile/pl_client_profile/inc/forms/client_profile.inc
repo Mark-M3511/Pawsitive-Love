@@ -262,7 +262,8 @@ function client_basic_profile(){
 
   /** @var  string $key -- get the key used for field set */
 
-  $key = 'client_profile_my_profile';
+  /* bof: Primary Contact */
+  $key = 'client_profile_human_profile';
   $class_prefix = 'client-profile-';
   $form[$key] = array(
     '#type' => 'fieldset',
@@ -324,21 +325,73 @@ function client_basic_profile(){
   $custom_class = array($class_prefix. 'communication-options');
   $form[$key]['comm_options'] = array(
     '#type' => 'radios',
-    '#title' => t('Communication Options'),
+    '#title' => t('How would you like to be contacted'),
     '#default_value' => 0,
     '#options' => $options,
     '#required' => TRUE,
     '#attributes' => array('class' => $main_class + $custom_class),
     '#description' => t(''),
   );
+  /* eof: Primary Contact */
 
-  $key = 'client_profile_additional_info';
+  /* bof: Additional Contact */
+  $key = 'client_profile_additional_contact';
   $form[$key] = array(
     '#type' => 'fieldset',
-    '#title' => t('Additional Information'),
+    '#title' => t('Additional Contact'),
     '#collapsible' => FALSE,
   );
 
+  $form[$key]['first_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('First Name'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array($class_prefix. 'first-name');
+  $form[$key]['last_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Last Name'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array($class_prefix. '-tel');
+  $form[$key]['tel'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Telephone'),
+    '#default_value' => '',
+    '#size' => 40,
+    '#maxlength' => 20,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+
+  $custom_class = array($class_prefix. '-email');
+  $form[$key]['email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Email'),
+    '#default_value' => '',
+    '#size' => 60,
+    '#maxlength' => 40,
+    '#required' => TRUE,
+    '#attributes' => array('class' => $main_class + $custom_class),
+    '#description' => t(''),
+  );
+  /* eof: Additional Contact */
+
+  /* bof: Street Address */
+  $key = 'client_profile_street_address';
   $custom_class = array($class_prefix. 'street-address');
   $form[$key]['street_address'] = array(
     '#type' => 'textfield',
@@ -398,7 +451,10 @@ function client_basic_profile(){
     '#attributes' => array('class' => $main_class + $custom_class),
     '#description' => t(''),
   );
+  /* eof: Street Address */
 
+  /* bof: Access Information */
+  $key = 'client_profile_property_access';
   $options = drupal_map_assoc(array(t('Key'), t('Code'),));
   $custom_class = array($class_prefix. 'home-entry');
   $form[$key]['home_entry'] = array(
@@ -411,7 +467,7 @@ function client_basic_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array($class_prefix. 'access-code');
+  /*$custom_class = array($class_prefix. 'access-code');
   $form[$key]['postal_zip'] = array(
     '#type' => 'textfield',
     '#title' => t('Access Code'),
@@ -421,7 +477,7 @@ function client_basic_profile(){
     '#required' => TRUE,
     '#attributes' => array('class' => $main_class + $custom_class),
     '#description' => t(''),
-  );
+  );*/
 
   $options = drupal_map_assoc(array(t('Yes'), t('No'),));
   $custom_class = array($class_prefix. 'home-alarm');
@@ -447,7 +503,7 @@ function client_basic_profile(){
     '#description' => t(''),
   );
 
-  $custom_class = array($class_prefix. 'pass-code');
+  /*$custom_class = array($class_prefix. 'pass-code');
   $form[$key]['pass_code'] = array(
     '#type' => 'textfield',
     '#title' => t('Pass Code'),
@@ -457,7 +513,7 @@ function client_basic_profile(){
     '#required' => FALSE,
     '#attributes' => array('class' => $main_class + $custom_class),
     '#description' => t(''),
-  );
+  );*/
 
   $key = 'client_profile_residence_details';
   $form[$key] = array(
@@ -501,6 +557,7 @@ function client_basic_profile(){
     '#attributes' => array('class' => $main_class + $custom_class),
     '#description' => t(''),
   );
+  /* eof: Access Information */
 
   return $form;
 }
