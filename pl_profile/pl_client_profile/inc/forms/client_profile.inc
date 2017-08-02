@@ -483,7 +483,7 @@ function client_basic_profile(){
   $form[$key]['home_alarm'] = array(
     '#type' => 'radios',
     '#title' => t('Home Alarm'),
-    '#default_value' => 'No',
+    '#default_value' => t('Yes'),
     '#options' => $options,
     '#required' => TRUE,
     '#attributes' => array('class' => array_merge($main_class, $custom_class)),
