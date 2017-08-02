@@ -42,7 +42,7 @@ function client_pet_profile(){
     '#default_value' => '',
     '#options' => $options,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -54,7 +54,7 @@ function client_pet_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -70,7 +70,7 @@ function client_pet_profile(){
     '#default_value' => '',
     '#options' => $options,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -79,7 +79,7 @@ function client_pet_profile(){
     '#type' => 'date',
     '#title' => t('Date of Birth'),
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -91,7 +91,7 @@ function client_pet_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -104,7 +104,7 @@ function client_pet_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -120,7 +120,7 @@ function client_pet_profile(){
     '#default_value' => '',
     '#options' => $options,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -136,7 +136,7 @@ function client_pet_profile(){
     '#default_value' => '',
     '#options' => $options,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -148,7 +148,7 @@ function client_pet_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -160,7 +160,7 @@ function client_pet_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -172,7 +172,7 @@ function client_pet_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -198,7 +198,7 @@ function client_pet_profile(){
     '#default_value' => '',
     '#options' => $options,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -207,7 +207,7 @@ function client_pet_profile(){
     '#type' => 'textarea',
     '#title' => t('Anything else we should be aware of?'),
     '#default_value' => '',
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -223,7 +223,7 @@ function client_pet_profile(){
     '#default_value' => '',
     '#options' => $options,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -232,7 +232,7 @@ function client_pet_profile(){
     '#type' => 'textarea',
     '#title' => t('Create Location'),
     '#default_value' => '',
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -241,7 +241,7 @@ function client_pet_profile(){
     '#type' => 'textarea',
     '#title' => t('Cat Litterbox Location'),
     '#default_value' => '',
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -250,7 +250,7 @@ function client_pet_profile(){
     '#type' => 'textarea',
     '#title' => t('Cat Litterbox Location'),
     '#default_value' => '',
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -273,7 +273,7 @@ function client_basic_profile(){
 
   $main_class = array($class_prefix. 'field');
 
-  $custom_class = array($class_prefix. 'last-name');
+  $custom_class = array($class_prefix. 'first-name');
   $form[$key]['first_name'] = array(
     '#type' => 'textfield',
     '#title' => t('First Name'),
@@ -281,11 +281,11 @@ function client_basic_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
-  $custom_class = array($class_prefix. 'first-name');
+  $custom_class = array($class_prefix. 'last-name');
   $form[$key]['last_name'] = array(
     '#type' => 'textfield',
     '#title' => t('Last Name'),
@@ -293,7 +293,7 @@ function client_basic_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -305,7 +305,7 @@ function client_basic_profile(){
     '#size' => 40,
     '#maxlength' => 20,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -317,7 +317,7 @@ function client_basic_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -329,7 +329,7 @@ function client_basic_profile(){
     '#default_value' => 0,
     '#options' => $options,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
   /* eof: Primary Contact */
@@ -349,7 +349,7 @@ function client_basic_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -361,7 +361,7 @@ function client_basic_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -373,7 +373,7 @@ function client_basic_profile(){
     '#size' => 40,
     '#maxlength' => 20,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -385,7 +385,7 @@ function client_basic_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
   /* eof: Additional Contact */
@@ -400,7 +400,7 @@ function client_basic_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -412,7 +412,7 @@ function client_basic_profile(){
     '#size' => 40,
     '#maxlength' => 20,
     '#required' => FALSE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -424,7 +424,7 @@ function client_basic_profile(){
     '#size' => 60,
     '#maxlength' => 40,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -436,7 +436,7 @@ function client_basic_profile(){
     '#default_value' => 'ON',
     '#options' => $options,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -448,7 +448,7 @@ function client_basic_profile(){
     '#size' => 40,
     '#maxlength' => 20,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
   /* eof: Street Address */
@@ -463,7 +463,7 @@ function client_basic_profile(){
     '#default_value' => 'Key',
     '#options' => $options,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -475,7 +475,7 @@ function client_basic_profile(){
     '#size' => 40,
     '#maxlength' => 20,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );*/
 
@@ -487,7 +487,7 @@ function client_basic_profile(){
     '#default_value' => 'No',
     '#options' => $options,
     '#required' => TRUE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -499,7 +499,7 @@ function client_basic_profile(){
     '#size' => 40,
     '#maxlength' => 20,
     '#required' => FALSE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -511,7 +511,7 @@ function client_basic_profile(){
     '#size' => 40,
     '#maxlength' => 20,
     '#required' => FALSE,
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );*/
 
@@ -527,7 +527,7 @@ function client_basic_profile(){
     '#type' => 'textarea',
     '#title' => t('Location of cleaning supplies'),
     '#default_value' => '',
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -536,7 +536,7 @@ function client_basic_profile(){
     '#type' => 'textarea',
     '#title' => t('Electricity Shut Off'),
     '#default_value' => '',
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -545,7 +545,7 @@ function client_basic_profile(){
     '#type' => 'textarea',
     '#title' => t('Electricity Shut Off'),
     '#default_value' => '',
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
 
@@ -554,7 +554,7 @@ function client_basic_profile(){
     '#type' => 'textarea',
     '#title' => t('Gas Shut Off'),
     '#default_value' => '',
-    '#attributes' => array('class' => $main_class + $custom_class),
+    '#attributes' => array('class' => array_merge($main_class, $custom_class)),
     '#description' => t(''),
   );
   /* eof: Access Information */
