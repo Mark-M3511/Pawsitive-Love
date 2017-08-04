@@ -52,3 +52,25 @@ function pl_client_profile_menu(){
 
   return $items;
 }
+
+function pl_client_profile_entity_info(){
+  $items = array();
+
+  $items['pl_client_profile'] = array(
+    'label' => t('Pawsitive Love Human Client Profile Entity'),
+    'base table' => 'pl_client_human_profile',
+    'module' => 'pl_client_profile',
+    'entity class' =>  'PL_Client_Human_Profile_Entity',
+//    'controller class' => 'PL_Client_Profile_EntityController',
+    'metadata controller class' => 'PL_Client_Human_Profile_EntityMetadataController',
+//    'views controller class' => 'PL_Client_Human_Profile_ViewsController',
+    'fieldable' => FALSE,
+    'entity keys' => array(
+      'id' => 'cppid',
+    ),
+    'static cache' => TRUE,
+    'label callback' => 'entity_class_label',
+  );
+
+  return $items;
+}

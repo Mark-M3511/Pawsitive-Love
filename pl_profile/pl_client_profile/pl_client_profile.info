@@ -8,3 +8,4 @@ dependencies[] = pl_profile:pl_profile
 
 files[] = inc/forms/client_profile.inc
 files[] = inc/forms/client_profile_pet_profile.inc
+files[] = 'inc/entity/client_profile_entity.inc'
