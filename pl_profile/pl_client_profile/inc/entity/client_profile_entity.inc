@@ -52,23 +52,51 @@ class PL_Client_Human_Profile_EntityMetadataController extends EntityDefaultMeta
     );
     $properties['last_name'] = array(
       'label' => t('Client Profile Last Name'),
-      'description' => t('Client\'s Last Name'),
+      'description' => t('Client Profile Last Name'),
       'type' => 'text',
       'schema field' => 'date_updated',
       'setter callback' => 'entity_property_verbatim_set',
     );
     $properties['first_name'] = array(
       'label' => t('Client Profile First Name'),
-      'description' => t('Client\'s First Name'),
+      'description' => t('Client Profile First Name'),
       'type' => 'text',
       'schema field' => 'date_updated',
       'setter callback' => 'entity_property_verbatim_set',
     );
-    $properties['first_name'] = array(
-      'label' => t('Client Profile First Name'),
-      'description' => t('Client\'s First Name'),
+    $properties['tel_mobile'] = array(
+      'label' => t('Client Profile Mobile Number'),
+      'description' => t('Client Profile Mobile Number'),
       'type' => 'text',
-      'schema field' => 'date_updated',
+      'schema field' => 'tel_mobile',
+      'setter callback' => 'entity_property_verbatim_set',
+    );
+    $properties['email'] = array(
+      'label' => t('Client Profile Email'),
+      'description' => t('Client Profile Email'),
+      'type' => 'text',
+      'schema field' => 'email',
+      'setter callback' => 'entity_property_verbatim_set',
+    );
+    $properties['street_address'] = array(
+      'label' => t('Client Profile Street Adddress'),
+      'description' => t('\'Client Profile Street Adddress'),
+      'type' => 'text',
+      'schema field' => 'street_address',
+      'setter callback' => 'entity_property_verbatim_set',
+    );
+    $properties['city_town'] = array(
+      'label' => t('Client Profile City/Town'),
+      'description' => t('Client Profile City/Town'),
+      'type' => 'text',
+      'schema field' => 'street_address',
+      'setter callback' => 'entity_property_verbatim_set',
+    );
+    $properties['province_state'] = array(
+      'label' => t('Client Profile Province/State'),
+      'description' => t('Client Profile Province/State'),
+      'type' => 'text',
+      'schema field' => 'street_address',
       'setter callback' => 'entity_property_verbatim_set',
     );
 
