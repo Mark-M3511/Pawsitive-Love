@@ -9,28 +9,102 @@
 function pl_client_profile_schema(){
   $schema = array();
 
-  $schema = array_merge(
-    pl_client_pet_profile_schema(),
-    pl_client_human_profile_schema()
+  $schema['pl_client_human_profile'] = array(
+    'description' => 'Client Human Profile table holds identifying informaiton about human clients',
+    'fields' => array(
+      'cphid' => array(
+        'description' => 'Primary id for Client Human Profile',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'date_created' => array(
+        'description' => 'Date and time row was inserted',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'date_updated' => array(
+        'description' => 'Date and time row was last updated',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'last_name' => array(
+        'description' => 'Last name of client',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'first_name' => array(
+        'description' => 'First name of cliet',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'tel_mobile'=> array(
+        'description' => 'Mobile number',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'email' => array(
+        'description' => 'Client\'s primary email address',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'street_address'=> array(
+        'description' => 'Geographical street address',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'city_town'=> array(
+        'description' => 'City, Town or other Municipality',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'province_state' => array(
+        'description' => 'Province or State',
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'postal_zip' => array(
+        'description' => 'Postal or Zip',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('cphid'),
+    'indexes' => array(
+      'last_name' => array('last_name'),
+      'first_name' => array('first_name'),
+      'tel_mobile' => array('tel_mobile'),
+      'email' => array('email'),
+    ),
   );
-
-  return $schema;
-}
-
-function pl_client_pet_profile_schema(){
-  $schema = array();
 
   $schema['pl_client_pet_profile'] = array(
     'description' => 'Client Pet Profile table holds identifying informaiton about human pet clients',
     'fields' => array(
       'cppid' => array(
-        'description' => 'Primary id for Client Profile',
+        'description' => 'Primary id for Client Pet Profile',
         'type' => 'serial',
         'unsigned' => TRUE,
         'not null' => TRUE,
       ),
       'cphid' => array(
-        'description' => 'Foreign key id for Client Profile',
+        'description' => 'Foreign key id for Client Human Profile',
         'type' => 'int',
         'unsigned' => TRUE,
         'not null' => TRUE,
@@ -115,6 +189,7 @@ function pl_client_pet_profile_schema(){
     ),
     'primary key' => array('cppid'),
     'indexes' => array(
+      'cphid' => array('cphid'),
       'name_of_pet' => array('name_of_pet'),
       'type_of_pet' => array('type_of_pet'),
       'pet_breed' => array('pet_breed'),
@@ -124,87 +199,3 @@ function pl_client_pet_profile_schema(){
   return $schema;
 }
 
-function pl_client_human_profile_schema(){
-  $schema = array();
-
-  $schema['pl_client_human_profile'] = array(
-    'description' => 'Client Human Profile table holds identifying informaiton about human clients',
-    'fields' => array(
-      'cphid' => array(
-        'description' => 'Primary id for Client Pet Profile',
-        'type' => 'serial',
-        'unsigned' => TRUE,
-        'not null' => TRUE,
-      ),
-      'date_created' => array(
-        'description' => 'Date and time row was inserted',
-        'type' => 'int',
-        'not null' => TRUE,
-      ),
-      'date_updated' => array(
-        'description' => 'Date and time row was last updated',
-        'type' => 'int',
-        'not null' => TRUE,
-      ),
-      'last_name' => array(
-        'description' => 'Last name of client',
-        'type' => 'varchar',
-        'length' => 100,
-        'not null' => TRUE,
-        'default' => '',
-      ),
-      'first_name' => array(
-        'description' => 'First name of cliet',
-        'type' => 'varchar',
-        'length' => 100,
-        'not null' => TRUE,
-        'default' => '',
-      ),
-      'tel_mobile'=> array(
-        'description' => 'Mobile number',
-        'type' => 'varchar',
-        'length' => 20,
-        'not null' => TRUE,
-        'default' => '',
-      ),
-      'email' => array(
-        'description' => 'Client\'s primary email address',
-        'type' => 'varchar',
-        'length' => 100,
-        'not null' => TRUE,
-        'default' => '',
-      ),
-      'street_address'=> array(
-        'description' => 'Geographical street address',
-        'type' => 'varchar',
-        'length' => 100,
-        'not null' => TRUE,
-        'default' => '',
-      ),
-      'city_town'=> array(
-        'description' => 'City, Town or other Municipality',
-        'type' => 'varchar',
-        'length' => 100,
-        'not null' => TRUE,
-        'default' => '',
-      ),
-      'province_state' => array(
-        'description' => 'Province or State',
-        'type' => 'varchar',
-        'length' => 3,
-        'not null' => TRUE,
-        'default' => '',
-      ),
-    ),
-    'primary key' => array('cppid'),
-    'indexes' => array(
-      'cphid' => array('cphid'),
-      'last_name' => array('last_name'),
-      'first_name' => array('first_name'),
-      'tel_mobile' => array('tel_mobile'),
-      'email' => array('email'),
-    ),
-  );
-
-  return $schema;
-}
